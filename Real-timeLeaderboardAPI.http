@@ -1,0 +1,6 @@
+@Real_timeLeaderboardAPI_HostAddress = http://localhost:5254
+
+GET {{Real_timeLeaderboardAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
