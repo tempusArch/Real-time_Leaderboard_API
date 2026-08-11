@@ -57,8 +57,8 @@ builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<HttpContextService>();
 builder.Services.AddScoped<DbSeeder>();
 
-builder.Services.AddSingleton<PasswordHasher>();
-builder.Services.AddSingleton<JwtService>();
+builder.Services.AddTransient<PasswordHasher>();
+builder.Services.AddTransient<JwtService>();
 
 
 builder.Services.AddProblemDetails();
