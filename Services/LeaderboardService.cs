@@ -39,7 +39,7 @@ public class LeaderboardService {
             .ToListAsync(cancellationToken);
 
         if (!data.Any())
-            throw new NotFoundException("Score not found");
+            throw new NotFoundException("No score data found");
 
         var entries = data
             .Select(x => new SortedSetEntry(x.Name, x.CurrentRankingScore))

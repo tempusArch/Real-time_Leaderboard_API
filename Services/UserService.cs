@@ -45,20 +45,13 @@ public class UserService {
         var theUser = await _context.UserTable
             .SingleOrDefaultAsync(x => x.Email == dto.Email);
 
-        //if (theUser == null || !_passwordHasher.VerifyPassword(command.LoginUserDto.Password, theUser.PasswordHashed)) 
-            //throw new UnauthorizedAccessException();
-
-        if (theUser == null) {
-            Console.WriteLine("❌ User not found");
+        if (theUser == null) 
             throw new UnauthorizedAccessException("User not found");
-        }
 
         var isValidPassword = _passwordHasher.VerifyPassword(
             dto.Password,
             theUser.PasswordHashed
         );
-
-        Console.WriteLine($"Password valid: {isValidPassword}");
 
         if (!isValidPassword) 
             throw new UnauthorizedAccessException("Invalid password");
