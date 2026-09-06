@@ -1,4 +1,4 @@
-# Real-time_Leaderboard_API
+# Real-time-Leaderboard-API
 
 ## Tech Stack
 - C#
